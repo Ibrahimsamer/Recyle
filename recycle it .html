@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    nav {
+      background-color: #008837;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    nav img {
+      height: 50px;
+      width: auto;
+      margin-right: 10px;
+    }
+
+    #hamburgerIcon {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    #hamburgerIcon div {
+      width: 20px;
+      height: 2px;
+      background-color: #fff;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    #hamburgerIcon.active div:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    #hamburgerIcon.active div:nth-child(2) {
+      opacity: 0;
+    }
+
+    #hamburgerIcon.active div:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .center-text {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      transition: height 0.3s ease;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .overlay-content {
+      text-align: center;
+      color: #fff;
+      font-size: 16px;
+      padding: 20px;
+    }
+
+    .recycle-icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+      color: #008837;
+    }
+
+    .overlay button {
+      color: #fff;
+      font-size: 16px;
+      padding: 10px;
+      background-color: #008837;
+      border: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .overlay button:hover {
+      background-color: #00622d; /* Change the color on hover */
+    }
+
+    .content-section {
+      margin-top: 20px;
+    }
+
+    .content-section h3 {
+      color: #008837;
+    }
+
+    .content-section p {
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .slogan-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slogan {
+      position: absolute;
+      top: 30%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: left;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .slogan h2 {
+      color: #fff;
+      margin: 0;
+    }
+
+    .rectangle-photo-container {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .rectangle-photo {
+      width: 100%;
+      display: block;
+    }
+
+    .login-button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px;
+      border: 1px solid #008837;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #008837;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-button:hover {
+      background-color: #00622d; /* Change the color on hover */
+    }
+
+    .text-under-photo {
+      text-align: center;
+      color: #333;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <img src="https://i.ibb.co/Bzk2FvF/Picsart-23-12-27-19-01-54-496.png" alt="Logo">
+    <div class="center-text">
+      <a href="recycleit.html">Home</a>
+      <a href="about_recycleit.html">About</a>
+      <a href="contact_recycleit.html">Contact</a>
+    </div>
+    <div id="hamburgerIcon" onclick="toggleOverlay()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+
+  <div class="slogan-container">
+    <div class="slogan">
+      <h2>Reduce, Reuse, Recycle</h2>
+      <h2>Be Green, Be Clean</h2>
+      <h2>Save the Earth, Save the Future</h2>
+    </div>
+
+    <div class="rectangle-photo-container">
+      <img class="rectangle-photo" src="https://i.ibb.co/bLYjXZG/Picsart-24-01-26-17-52-59-400.jpg" alt="Rectangle Photo">
+      <div class="login-button" onclick="window.location='signinup.html'">Login</div>
+    </div>
+
+    <div class="text-under-photo">
+      <h3>About Recycling</h3>
+      <p>Recycling is the process of converting waste materials into reusable materials. It helps reduce waste, conserve resources, and protect the environment. By sorting items and following local recycling guidelines, you contribute to creating a sustainable future.</p>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <div class="overlay-content">
+      <div class="recycle-icon">♻</div>
+      <h2>Recycling Hub</h2>
+      <p>Join us in recycling for a sustainable future. Together, let's make a positive impact on the environment.</p>
+      <button onclick="window.location='learn_more.html'">Learn More</button>
+
+      <div class="content-section">
+        <h3>Why Recycle?</h3>
+        <p>Recycling reduces waste, conserves resources, and helps protect the planet. Be part of the solution!</p>
+      </div>
+
+      <div class="content-section">
+        <h3>How to Recycle</h3>
+        <p>Sort youritems, use designated bins, and follow local recycling guidelines. It's easy and makes a difference.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleOverlay() {
+      var overlay = document.getElementById("overlay");
+      var hamburgerIcon = document.getElementById("hamburgerIcon");
+
+      if (overlay.style.height === "100%") {
+        overlay.style.height = "0";
+        hamburgerIcon.classList.remove("active");
+      } else {
+        overlay.style.height = "100%";
+        hamburgerIcon.classList.add("active");
+      }
+    }
+
+    document.getElementById("hamburgerIcon").addEventListener("click", function (event) {
+      if (event.target.classList.contains("close")) {
+        toggleOverlay();
+      }
+    });
+  </script>
+
+</body>
+
+</html>
